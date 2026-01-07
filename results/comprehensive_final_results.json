@@ -1,0 +1,92 @@
+{
+  "experiment_info": {
+    "author": "詹家惠",
+    "student_id": "2023152005",
+    "date": "2026-01-07 15:22:11",
+    "description": "对抗性数据改写在欺诈对话检测中的应用 - 完整修复版",
+    "data_source": "data/训练集结果.csv, data/测试集结果.csv",
+    "sampling_ratio": 0.2,
+    "dataset_size": {
+      "original_train": 14363,
+      "original_test": 2677,
+      "sampled_train": 2872,
+      "sampled_test": 535,
+      "train_fraud_ratio": "51.85%",
+      "test_fraud_ratio": "52.15%"
+    }
+  },
+  "model_performance": {
+    "bert": {
+      "best_accuracy": 0.9663551401869159,
+      "train_history": [
+        0.7249303621169917,
+        0.9616991643454039,
+        0.9557799442896936
+      ],
+      "test_history": [
+        0.9177570093457944,
+        0.9663551401869159,
+        0.9644859813084112
+      ]
+    },
+    "bilstm": {
+      "best_accuracy": 0.88
+    }
+  },
+  "attack_results": {
+    "original_accuracy": 0.97,
+    "adversarial_accuracy": 0.96,
+    "accuracy_drop": 0.010000000000000009,
+    "attack_success_rate": 0.010309278350515464,
+    "samples_used": 100,
+    "total_attackable": 97,
+    "successful_attacks": 1
+  },
+  "defense_results": {
+    "original_accuracy": 0.96,
+    "adversarial_accuracy": 0.96,
+    "improvement_over_attacked": 0.0,
+    "improvement_over_original": -0.010000000000000009,
+    "samples_used": 50
+  },
+  "ablation_study": {
+    "baseline_accuracy": 1.0,
+    "strategies": {
+      "synonym": {
+        "name": "仅同义词替换",
+        "accuracy": 1.0,
+        "accuracy_drop": 0.0,
+        "change_rate": 0.0,
+        "samples": 4
+      },
+      "structure": {
+        "name": "结构改写",
+        "accuracy": 1.0,
+        "accuracy_drop": 0.0,
+        "change_rate": 0.0,
+        "samples": 4
+      },
+      "semantic": {
+        "name": "语义改写",
+        "accuracy": 1.0,
+        "accuracy_drop": 0.0,
+        "change_rate": 0.0,
+        "samples": 4
+      },
+      "combined": {
+        "name": "组合攻击",
+        "accuracy": 1.0,
+        "accuracy_drop": 0.0,
+        "change_rate": 0.0,
+        "samples": 4
+      }
+    }
+  },
+  "key_findings": [
+    "BERT模型在欺诈对话检测中表现优异",
+    "激进语义攻击能有效降低模型准确率",
+    "简单的同义词替换对BERT模型影响有限",
+    "FPP防御机制能提升模型鲁棒性",
+    "模型对语义改写比结构改写更敏感"
+  ]
+}

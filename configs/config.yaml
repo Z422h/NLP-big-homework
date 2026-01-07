@@ -1,0 +1,37 @@
+attacks:
+  textfooler:
+    max_candidates: 20
+    max_perturbations: 5
+    threshold: 0.5
+  tfa_attack:
+    max_iterations: 10
+    parallel_replacements: true
+    use_external_llm: false
+experiment:
+  batch_size: 32
+  device: cuda
+  num_epochs: 10
+  seed: 42
+fpp:
+  kappa: 0.25
+  lambda_param: 0.5
+  num_samples: 256
+  voting_type: plurality
+models:
+  bert:
+    learning_rate: 2.0e-05
+    max_length: 512
+    model_name: bert-base-chinese
+  bilstm:
+    dropout: 0.5
+    embedding_dim: 300
+    hidden_dim: 256
+    learning_rate: 0.001
+    max_length: 256
+    num_layers: 2
+paths:
+  adversarial_dir: outputs/adversarial_samples/
+  data_dir: data/
+  model_dir: outputs/models/
+  output_dir: outputs/
+  result_dir: outputs/results/
