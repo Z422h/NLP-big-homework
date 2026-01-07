@@ -67,6 +67,7 @@ FPP防御评估：测试FPP防御框架效果
 结果可视化：生成图表和分析报告
 
 ### 项目结构
+```bash
 NLP-big-homework/
 ├── configs/                    # 配置文件目录
 │   ├── config.yaml            # 主配置文件
@@ -94,6 +95,7 @@ NLP-big-homework/
 ├── run_experiment.py          # 强力攻击实验脚本
 ├── requirements.txt           # 依赖包列表
 └── README.md                  # 项目说明文档
+```
 
 ###  实验设计
 
